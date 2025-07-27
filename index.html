@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IPL project" />
+  <title>CrickScoop</title>
+  <link rel="stylesheet" href="default.css" />
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <section class="top">
+    <div class="logo-container">
+      <div class="brand">CrickScoop</div>
+      <div class="tagline">Recap in 5 min</div>
+    </div>
+  </section>
+
+  <section class="first-view">
+    
+    <div class="hero-video-container">
+      <img
+        class="hero-img"
+        src="14f2047af086919133ab0fa4158ab335-removebg-preview-Photoroom (1).png"
+      />
+    </div>
+  </section>
+
+  <!-- Team Carousel Section -->
+  <section class="team">
+    <div class="carousel-wrapper" id="carouselWrapper">
+      <div class="carousel-track" id="carouselTrack"></div>
+    </div>
+  </section>
+
+  <script>
+    // Team carousel population logic
+    const wrapper = document.getElementById('carouselWrapper');
+    const track = document.getElementById('carouselTrack');
+    const cards = [
+      { title: 'MI', img: 'https://play-lh.googleusercontent.com/QNe4tzpzsp4L5lbag6vDvYhTdS-eB33SO-zB-pxW9g9hnZyNPZkXlUCmtTaOTQxG69g' },
+      { title: 'CSK', img: 'https://assets.designhill.com/design-blog/wp-content/uploads/2025/03/1-5.jpg' },
+      { title: 'RCB', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJR8EPi2zW3J24ugHo_EOjrBe-4s_Qnt0T8Q&s' },
+      { title: 'KKR', img: 'https://exchange4media.gumlet.io/news-photo/1516760983_cgzTHd_kolkata-knight-riders-640x360.jpg' },
+      { title: 'RR', img: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/This_is_the_logo_for_Rajasthan_Royals%2C_a_cricket_team_playing_in_the_Indian_Premier_League_%28IPL%29.svg/1200px-This_is_the_logo_for_Rajasthan_Royals%2C_a_cricket_team_playing_in_the_Indian_Premier_League_%28IPL%29.svg.png' },
+      { title: 'DC', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfeUxl2XKrw7Zdh3tHEG0y9p8dbfitr877IA&s' },
+      { title: 'SRH', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsxsWuk8ejkkoDU0DVKlnJCXpaSIQk-5JdCQ&s' },
+      { title: 'LSG', img: 'https://images.businessupturn.com/wp-content/uploads/2025/02/lucknow-super-giants-1024x576.jpg' },
+      { title: 'GT', img: 'https://www.financialexpress.com/wp-content/uploads/2024/11/FotoJet-2024-11-25T145844.182.jpg' },
+      { title: 'PBKS', img: 'https://www.financialexpress.com/wp-content/uploads/2024/11/Punjab-Kings-PBSK-IPL-2025-full-Squad-Players-List.jpg' }
+    ];
+    const sets = 4;
+    for (let i = 0; i < sets; i++) {
+      cards.forEach(card => {
+        const cardEl = document.createElement('div');
+        cardEl.className = 'carousel-card';
+        cardEl.innerHTML = `
+          <img src="${card.img}" alt="${card.title}" />
+          <p>${card.title}</p>
+        `;
+        track.appendChild(cardEl);
+      });
+    }
+
+    // Reset scroll to middle
+    window.onload = () => {
+      if (wrapper && track) {
+        wrapper.scrollLeft = track.scrollWidth / 2;
+      }
+    };
+
+    // Smooth infinite scroll illusion
+    wrapper.addEventListener('scroll', () => {
+      const scrollLeft = wrapper.scrollLeft;
+      const maxScroll = track.scrollWidth;
+      const mid = maxScroll / 2;
+      const view = wrapper.offsetWidth;
+      if (scrollLeft <= 0) wrapper.scrollLeft = mid;
+      if (scrollLeft + view >= maxScroll - 1) wrapper.scrollLeft = mid - view;
+    });
+
+    // Recap carousel logic
+    const carousel = document.getElementById('carousel');
+    function scrollCarousel(direction) {
+      const scrollAmount = 340;
+      carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+    window.scrollCarousel = scrollCarousel;
+  </script>
+
+
+
+
+
+<section class="nav-looking">
+  <main>
+    <button>
+      <div>
+        <span>Match</span>
+      </div>
+    </button>
+  </main>
+  
+  
+  <!--info box-->
+  <div class="info-box" 
+       data-info=""
+       data-issue=""
+  >
+  
+    
+  </div>
+
+  <main>
+    <button>
+      <div>
+        <span>Result</span>
+      </div>
+    </button>
+  </main>
+  
+  
+  <!--info box-->
+  <div class="info-box" 
+       data-info=""
+       data-issue=""
+  >
+  
+    
+  </div>
+
+  <main>
+    <button>
+      <div>
+        <span>Table</span>
+      </div>
+    </button>
+  </main>
+  
+  
+  <!--info box-->
+  <div class="info-box" 
+       data-info=""
+       data-issue=""
+  >
+  
+    
+  </div>
+
+  <main>
+    <button>
+      <div>
+        <span>Player</span>
+      </div>
+    </button>
+  </main>
+  
+  
+  <!--info box-->
+  <div class="info-box" 
+       data-info=""
+       data-issue=""
+  >
+  
+    
+
+</section>
+
+
+
+
+
+
+
+
+  <section class="magic-section">
+    <section class="heading-moments">
+    IPL 
+<div class="dropping-texts">
+  <div>Rewind</div>
+  <div>Flashback</div>
+  <div>Moments</div>
+  <div>Replay!</div>
+</div>
+    </section>
+      <div class="carousel" id="carousel">
+        <div class="carousel" id="carousel">
+          <div class="card">
+            <div class="video-container">
+              <iframe width="400" height="260" src="https://www.youtube.com/embed/WZPY3xVedQc?autoplay=1&mute=1&loop=1&playlist=WZPY3xVedQc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+              <h3>RCB’s Historic Celebration at Final</h3>
+              <div class="meta">
+                <span>4 Jun, 2025</span>
+                <span><i class="fas fa-eye"></i> 2.9M</span>
+                <span>03:06 mins</span>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="video-container">
+              <iframe width="400" height="260" src="https://www.youtube.com/embed/1IEwNXwLHys?autoplay=1&mute=1&loop=1&playlist=1IEwNXwLHys" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+              <h3>LSG vs RCB: Post-Match Celebrations</h3>
+              <div class="meta">
+                <span>28 May, 2025</span>
+                <span><i class="fas fa-eye"></i> 1.3M</span>
+                <span>07:27 mins</span>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="video-container">
+              <iframe width="400" height="260" src="https://www.youtube.com/embed/OF6460o21Is?autoplay=1&mute=1&loop=1&playlist=OF6460o21Is" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+              <h3>TATA IPL 2024 - TOP 15 CATCHES</h3>
+              <div class="meta">
+                <span>06 May, 2025</span>
+                <span><i class="fas fa-eye"></i> 7.7k</span>
+                <span>01:40 mins</span>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="video-container">
+              <iframe width="400" height="260"
+                src="https://www.youtube.com/embed/f1nQ2Ubm4nM?autoplay=1&mute=1&loop=1&playlist=f1nQ2Ubm4nM&controls=0&modestbranding=1&showinfo=0&rel=0&fs=0&cc_load_policy=0"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="card-body">
+              <h3>Sensational Hat-tricks </h3>
+              <div class="meta">
+                <span>23 Mar, 2025</span>
+                <span><i class="fas fa-eye"></i> 519k</span>
+                <span>06:47 mins</span>
+              </div>
+            </div>
+          </div>
+    </div>
+  </section>
+
+
+
+  <section class="news">
+   
+    <div class="container">
+       <div class="card__container">
+
+     
+        <article class="card__article">
+          <img src="https://documents.iplt20.com/ipl/IPLHeadshot2025/150.png" alt="image" class="card__img">
+
+          <div class="card__data">
+             <span class="card__description">Purple Cap</span>
+             <h2 class="card__title" >Prasidh Krishna</h2>
+             <a href="https://www.google.com/search?q=prasidh+krishna&rlz=1C5OZZY_enIN1134IN1136&oq=Prasidh+Krishna&gs_lcrp=EgZjaHJvbWUqDQgAEAAY4wIYsQMYgAQyDQgAEAAY4wIYsQMYgAQyCggBEC4YsQMYgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyCggGEAAYsQMYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgATSAQc3OTBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8" class="card__button">Read More</a>
+          </div>
+       </article>
+       
+
+       <article class="card__article">
+        <img src="https://ipl-stats-sports-mechanic.s3.ap-south-1.amazonaws.com/ipl/playerimages/Surya%20Kumar%20Yadav.png" alt="image" class="card__img">
+     
+
+        <div class="card__data">
+           <span class="card__description">Most Valuable Player</span>
+           <h2 class="card__title">Suryakumar Yadav</h2>
+           <a href="https://www.google.com/search?q=suryakumar+yadav&rlz=1C5OZZY_enIN1134IN1136&oq=Suryakumar+Yadav&gs_lcrp=EgZjaHJvbWUqEggAEAAYQxjjAhixAxiABBiKBTISCAAQABhDGOMCGLEDGIAEGIoFMg8IARAuGEMYsQMYgAQYigUyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyCggGEAAYsQMYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgATSAQc2MjdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8" class="card__button">Read More</a>
+        </div>
+     </article>
+
+
+        <article class="card__article">
+          <img src="https://documents.iplt20.com/ipl/IPLHeadshot2025/976.png" alt="image-ipl-winning" class="card__img">
+
+          <div class="card__data">
+             <span class="card__description">Orange Cap</span>
+             <h2 class="card__title">Sai Sudharsan</h2>
+             <a href="https://www.google.com/search?q=sai+sudharsan&rlz=1C5OZZY_enIN1134IN1136&oq=Sai+Sudharsan&gs_lcrp=EgZjaHJvbWUqEggAEAAYQxjjAhixAxiABBiKBTISCAAQABhDGOMCGLEDGIAEGIoFMg8IARAuGEMYsQMYgAQYigUyBwgCEAAYgAQyDwgDEAAYQxixAxiABBiKBTIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBBzczM2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8" class="card__button">Read More</a>
+          </div>
+        </article>
+
+      
+          
+
+      
+       
+
+      
+  </section>
+</html>
+
+
+
+</body>
+</html>
+
